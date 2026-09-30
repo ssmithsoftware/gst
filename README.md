@@ -17,4 +17,6 @@ Usage: gst [ -c [ -f -n -o -p -w ] -g -h -v ] [PACKAGE]... [REGEXP]
 
 ## install
 
-`curl -o- https://ssmithsoftware.github.io/gst/install.sh | sh`
+```sh
+curl -o- https://ssmithsoftware.github.io/gst/install.sh | sh
+```
