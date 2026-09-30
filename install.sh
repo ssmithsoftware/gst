@@ -6,7 +6,7 @@ exe=bin/gst
 license=share/licenses/gst/LICENSE
 outdir=$HOME/${PREFIX-.local}
 tmpdir=$(mktemp -d)
-url=https://raw.githubusercontent.com/ssmithsoftware/gst/refs/heads/master
+url=https://ssmithsoftware.github.io/gst
 
 curl --output-dir $tmpdir -ZO $url/$exe -O $url/$license
 
