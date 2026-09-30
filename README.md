@@ -1,6 +1,6 @@
 # gst
 
-```
+```sh
 gst is used to tailor the output of go test and go tool cover.
 
 Usage: gst [ -c [ -f -n -o -p -w ] -g -h -v ] [PACKAGE]... [REGEXP]
