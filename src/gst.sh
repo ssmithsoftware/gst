@@ -50,8 +50,12 @@ done
 
 if [ -z $out ]; then
   outdir=$(mktemp -d)
+
+  if [ -n "$verbose" ]; then
+    echo "$outdir"
+  fi
 else
-  mkdir -p "$outdir"
+  mkdir -p $verbose -- "$outdir"
 fi
 
 shift $((OPTIND - 1))
@@ -84,6 +88,6 @@ if [ -n "$cover" ]; then
   get_cover $func ${func+func.txt}
 
   if ! get_cover $html ${html+index.html}; then
-    echo 'Failed to open HTML document. No file opener exists.'
+    echo 'Failed to open HTML document. No file opener exists.' >&2
   fi
 fi
