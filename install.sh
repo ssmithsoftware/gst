@@ -2,15 +2,20 @@
 
 set -e
 
-exe=bin/gst
-license=share/licenses/gst/LICENSE
-outdir=$HOME/${PREFIX-.local}
+prefix=${PREFIX-$HOME/.local}
+bindir=$prefix/bin
+licdir=$prefix/share/licenses/gst
 tmpdir=$(mktemp -d)
 url=https://ssmithsoftware.github.io/gst
 
-curl --output-dir $tmpdir -ZO $url/$exe -O $url/$license
+curl --output-dir $tmpdir -Zo gst $url/src/gst.sh -O $url/LICENSE
 
-install -Dvm755 $tmpdir/gst $outdir/$exe
-install -Dvm644 $tmpdir/LICENSE $outdir/$license
+mkdir -pv -- "$bindir"/ "$licdir"/
 
-rm -fr $tmpdir/
+cp -iv -- $tmpdir/gst "$bindir/"
+chmod -v -- 755 "$bindir/gst"
+
+cp -iv -- $tmpdir/LICENSE "$licdir/"
+chmod -v -- 644 "$licdir/LICENSE"
+
+rm -frv $tmpdir/
