@@ -18,5 +18,5 @@
 ## install
 
 ```sh
-curl -o- https://ssmithsoftware.github.io/gst/install.sh | sh
+curl -so- https://ssmithsoftware.github.io/gst/install.sh | sh
 ```
