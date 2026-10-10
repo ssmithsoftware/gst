@@ -18,7 +18,7 @@ Usage: gst [ -c [ -f -n -o -p -w ] -g -h -v ] [PACKAGE]... [REGEXP]
 EOF
 )
 
-get_cover () {
+get_cover() {
   if [ -n "$1" ]; then
     set -- $1 "$outdir/cover.out" $out ${out+"$outdir/$2"} $cflags
 
@@ -26,7 +26,7 @@ get_cover () {
   fi
 }
 
-set_cover () {
+set_cover() {
   if [ -z $cover ]; then
     cover=-coverprofile
   fi

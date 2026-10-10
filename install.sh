@@ -20,7 +20,7 @@ chmod -- 644 "$licdir/LICENSE"
 
 case :$PATH: in
   *:$prefix/bin:*) ;;
-  *) echo "$bindir not found in PATH";;
+  *) echo "$bindir not in PATH";;
 esac
 
 trap "rm -fr $tmpdir/" EXIT
