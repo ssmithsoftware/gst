@@ -8,19 +8,19 @@ licdir=$prefix/share/licenses/gst
 tmpdir=$(mktemp -d)
 url=https://ssmithsoftware.github.io/gst
 
-curl --output-dir $tmpdir -Zo gst $url/src/gst.sh -O $url/LICENSE
+curl --output-dir $tmpdir -Zso gst $url/src/gst.sh -O $url/LICENSE
 
-mkdir -pv -- "$bindir"/ "$licdir"/
+mkdir -p -- "$bindir"/ "$licdir"/
 
-cp -iv -- $tmpdir/gst "$bindir/"
-chmod -v -- 755 "$bindir/gst"
+cp -i -- $tmpdir/gst "$bindir/"
+chmod -- 755 "$bindir/gst"
 
-cp -iv -- $tmpdir/LICENSE "$licdir/"
-chmod -v -- 644 "$licdir/LICENSE"
+cp -i -- $tmpdir/LICENSE "$licdir/"
+chmod -- 644 "$licdir/LICENSE"
 
 case :$PATH: in
   *:$prefix/bin:*) ;;
   *) echo "$bindir not found in PATH";;
 esac
 
-trap "rm -frv $tmpdir/" EXIT
+trap "rm -fr $tmpdir/" EXIT
