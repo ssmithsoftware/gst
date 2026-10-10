@@ -18,4 +18,9 @@ chmod -v -- 755 "$bindir/gst"
 cp -iv -- $tmpdir/LICENSE "$licdir/"
 chmod -v -- 644 "$licdir/LICENSE"
 
-rm -frv $tmpdir/
+case :$PATH: in
+  *:$prefix/bin:*) ;;
+  *) echo "$bindir not found in PATH";;
+esac
+
+trap "rm -frv $tmpdir/" EXIT
