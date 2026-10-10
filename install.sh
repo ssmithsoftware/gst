@@ -12,10 +12,10 @@ curl --output-dir $tmpdir -Zso gst $url/src/gst.sh -O $url/LICENSE
 
 mkdir -p -- "$bindir"/ "$licdir"/
 
-cp -i -- $tmpdir/gst "$bindir/"
+cp -- $tmpdir/gst "$bindir/"
 chmod -- 755 "$bindir/gst"
 
-cp -i -- $tmpdir/LICENSE "$licdir/"
+cp -- $tmpdir/LICENSE "$licdir/"
 chmod -- 644 "$licdir/LICENSE"
 
 case :$PATH: in
